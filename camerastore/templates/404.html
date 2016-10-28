@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Login Page</title>
+</head>
+<body>
+{% extends "layouts/simple.html" %}
+{% block content %}
+	<!-- registration-form -->
+	<div class="cart-items">
+		<div class="container">
+			<div class="dreamcrub">
+				<ul class="breadcrumbs">
+					<li class="home">
+						<a href="/" title="Go to Home Page">Home</a>&nbsp;
+						<span>&gt;</span>
+					</li>
+					<li class="women">
+						Error
+					</li>
+				</ul>
+				<ul class="previous">
+					<li><a href="/products">Browse all products</a></li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="app-msg alert alert-danger alert-dismissable">
+                        {% for message in messages %}
+                            <h4><i class="icon fa fa-ban"></i> {{ message }}</h4>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+
+
+
+			
+			<h1>404, Not Found</h1>
+
+		</div>
+	</div>
+{% endblock %}
+</body>
+</html>
