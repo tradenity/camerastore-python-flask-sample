@@ -32,7 +32,7 @@ def checkout():
     order.billingAddress = create_address()
     order.shippingAddress = create_address()
     form = CheckoutForm(obj=order)
-    return render_template("orders/checkout.html", form=form, cart=cart)
+    return render_template("orders/checkout.html", form=form, cart=cart, stripe_pub_key=app.config['STRIPE_PUBLIC_KEY'])
 
 
 @app.route("/orders/create", methods=['POST'])

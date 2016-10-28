@@ -4,6 +4,10 @@ from tradenity.sdk import Tradenity
 from tradenity_flask.sdk.ext.auth import FlaskAuthTokenHolder
 from camerastore import app
 
+
+# Change this value to reflect your stripe public key.
+app.config['STRIPE_PUBLIC_KEY'] = 'pk_xxxxxxxxxxxxxxxxxxxxxxx'
+
 # Change this value to reflect your store's API key.
 Tradenity.API_KEY = 'sk_xxxxxxxxxxxxxxxxx'
 Tradenity.TOKEN_HOLDER = FlaskAuthTokenHolder
