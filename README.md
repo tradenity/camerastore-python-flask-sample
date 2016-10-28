@@ -3,7 +3,7 @@ CameraStore Python/Flask sample application
 
 This is a demonstration of using Tradenity SDK with Flask to build ecommerce web application
 
-To run it on your local machine
+To run it on your local machine:
 
 ## Prerequisites
 
@@ -14,7 +14,7 @@ To run it on your local machine
 Choose one of the following:
 
 - Download the source code.
-- Clone `git clone git@github.com:tradenity/python-sdk-flask-ext.git`
+- Clone `git clone git@github.com:tradenity/camerastore-python-flask-sample.git`
 - Fork this repository
 
 ## Edit Credentials
@@ -23,7 +23,7 @@ Open main.py, modify this line:
 
 `Tradenity.API_KEY = 'sk_xxxxxxxxxxxxxxxxx'` 
 
-to your API key
+to reflect your store's API key
 
 ## Install requirements
 
