@@ -3,6 +3,8 @@ CameraStore Python/Flask sample application
 
 This is a demonstration of using Tradenity SDK with Flask to build ecommerce web application
 
+This sample application is free and opensource, we encourage you to fork it and use it as a base for your future applications.
+
 To run it on your local machine:
 
 ## Prerequisites
@@ -25,6 +27,10 @@ Open main.py, modify this line:
 
 to reflect your store's API key
 
+If you configured your store to use stripe for payment processing, then edit this line:
+
+`STRIPE_PUBLIC_KEY = 'pk_xxxxxxxxxxxxxxxxxxxxxxxxxx'` to reflect your public key.
+
 ## Install requirements
 
 `pip install -r requirements.txt`
@@ -33,3 +39,8 @@ to reflect your store's API key
 ## Run
 
 python main.py
+
+## Documentation & Explanation
+
+Refer to this [tutorial](http://docs.tradenity.com/kb/tutorials/python/flask/)
+on our knowledge base for full explanation of the source code
