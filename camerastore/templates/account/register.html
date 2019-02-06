@@ -33,11 +33,11 @@
 						<form action="/account/create" method="post" >
 							<ul>
 								<li class="text-info">First Name: </li>
-								<li>{{ form.firstName() }}</li>
+								<li>{{ form.first_name() }}</li>
 							</ul>
 							<ul>
 								<li class="text-info">Last Name: </li>
-								<li>{{ form.lastName() }}</li>
+								<li>{{ form.last_name() }}</li>
 							</ul>
 							<ul>
 								<li class="text-info">Email: </li>
@@ -53,7 +53,7 @@
 							</ul>
 							<ul>
 								<li class="text-info">Re-enter Password:</li>
-								<li>{{ form.confirmPassword() }}</li>
+								<li>{{ form.confirm_password() }}</li>
 							</ul>
 
 							<input type="submit" value="REGISTER NOW"/>

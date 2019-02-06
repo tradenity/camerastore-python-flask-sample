@@ -1,7 +1,7 @@
 from flask import render_template, request, jsonify
 from camerastore import app
 
-from tradenity.sdk.entities import *
+from tradenity.resources import *
 
 
 @app.route("/cart")
@@ -12,11 +12,12 @@ def view_cart():
 
 @app.route("/cart/add", methods=['POST'])
 def add_to_cart():
-    cart = ShoppingCart.add(product=request.form['product'], quantity=int(request.form['quantity']))
-    return jsonify(cart.as_dict())
+    print "Product ID: ", request.form['product']
+    cart = ShoppingCart.add_item(LineItem(product=Product(id=request.form['product']), quantity=int(request.form['quantity'])))
+    return jsonify(cart.to_dict())
 
 
 @app.route("/cart/remove/<item_id>", methods=['POST'])
 def remove_from_cart(item_id):
     cart = ShoppingCart.remove(item_id)
-    return jsonify(cart.as_dict())
+    return jsonify(cart.to_dict())

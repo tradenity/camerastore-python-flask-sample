@@ -1,6 +1,6 @@
 import sys
 
-from tradenity.sdk import Tradenity
+from tradenity import Configuration
 from tradenity_flask.sdk.ext.auth import FlaskAuthTokenHolder
 from camerastore import app
 
@@ -9,8 +9,8 @@ from camerastore import app
 app.config['STRIPE_PUBLIC_KEY'] = 'pk_xxxxxxxxxxxxxxxxxxxxxxx'
 
 # Change this value to reflect your store's API key.
-Tradenity.API_KEY = 'sk_xxxxxxxxxxxxxxxxx'
-Tradenity.TOKEN_HOLDER = FlaskAuthTokenHolder
+Configuration.API_KEY = 'sk_xxxxxxxxxxxxxxxxxxxxxxxxxx'
+Configuration.AUTH_TOKEN_HOLDER = FlaskAuthTokenHolder()
 
 from camerastore import shop
 from camerastore import cart

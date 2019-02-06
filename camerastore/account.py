@@ -1,5 +1,6 @@
 from flask import render_template, request, redirect, session, flash
-from tradenity.sdk.entities import Customer
+from tradenity.resources import Customer
+from tradenity.resources.utils import is_valid_password
 from camerastore import app
 from camerastore.forms import LoginForm, RegistrationForm
 
@@ -14,8 +15,8 @@ def login():
 def signin():
     form = LoginForm(request.form)
     if form.validate():
-        cust = Customer.find_by_username(form.username.data)
-        if cust is not None and cust.is_valid_password(form.password.data):
+        cust = Customer.find_one_by(username=form.username.data)
+        if cust is not None and is_valid_password(cust, form.password.data):
             session['customer_id'] = cust.id
             if 'target_url' in session:
                 target_url = session['target_url']

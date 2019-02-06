@@ -1,8 +1,8 @@
 from flask import redirect
 from flask import render_template
 from camerastore import app
-from tradenity.sdk import Tradenity
-from tradenity.sdk.exceptions import SessionExpiredException
+from tradenity import Configuration
+from tradenity.exceptions import SessionExpiredException
 
 
 @app.errorhandler(404)
@@ -12,5 +12,5 @@ def page_not_found(error):
 
 @app.errorhandler(SessionExpiredException)
 def session_expired(ex):
-    Tradenity.reset_current_session()
+    Configuration.AUTH_TOKEN_HOLDER.reset()
     return redirect("/")

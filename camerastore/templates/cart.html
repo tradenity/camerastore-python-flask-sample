@@ -13,7 +13,7 @@
 		<div class="dreamcrub">
 			<ul class="breadcrumbs">
 				<li class="home">
-					<a href="index.html" title="Go to Home Page">Home</a>&nbsp;
+					<a href="/" title="Go to Home Page">Home</a>&nbsp;
 					<span>&gt;</span>
 				</li>
 				<li class="women">
@@ -21,12 +21,12 @@
 				</li>
 			</ul>
 			<ul class="previous">
-				<li><a href="index.html">Back to Previous Page</a></li>
+				<li><a href="/products">Back to Previous Page</a></li>
 			</ul>
 			<div class="clearfix"></div>
 		</div>
 		<h2>MY SHOPPING CART </h2>
-        {% if cart.count <= 0 %}
+        {% if cart.items | length <= 0 %}
 		<h1>No Items in your cart yet</h1>
         {% else %}
 		<div class="cart-gd">
@@ -66,16 +66,16 @@
 				<a href="#" class="close1 deleteItem" data-item-id="{{item.id}}"> </a>
 				<div class="cart-sec simpleCart_shelfItem">
 					<div class="cart-item cyc">
-						<img src="{{item.product.mainPhoto.url}}" class="img-responsive" alt="" />
+						<img src="{{item.product.main_photo.url}}" class="img-responsive" alt="" />
 					</div>
 					<div class="cart-item-info">
-						<h3><a href="#"> {{ item.product.title }} </a></h3>
+						<h3><a href="/products/{{ item.product.id }}"> {{ item.product.name }} </a></h3>
 						<div class="delivery">
-							<p><span>Unit price : $</span> <span >{{ item.product.price }}</span></p>
+							<p><span>Unit price : $</span> <span >{{ item.product.price / 100 }}</span></p>
 							<div class="clearfix"></div>
                             <p><span>Quantity : </span> <span >{{ item.quantity }}</span></p>
                             <div class="clearfix"></div>
-                            <p><span>Total price : $</span> <span >{{ item.total }}</span></p>
+                            <p><span>Total price : $</span> <span >{{ item.subtotal / 100 }}</span></p>
                             <div class="clearfix"></div>
 						</div>
 					</div>

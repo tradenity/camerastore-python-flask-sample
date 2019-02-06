@@ -1,7 +1,7 @@
-CameraStore Python/Flask sample application
+CameraStore Python/Flask sample application for Tradenity ecommerce API
 ===========================================
 
-This is a demonstration of using Tradenity SDK with Flask to build ecommerce web application
+This is a sample application for [Tradenity](https://www.tradenity.com) ecommerce API using the [Python SDK](https://github.com/tradenity/python-sdk) with Flask to build ecommerce web application
 
 This sample application is free and opensource, we encourage you to fork it and use it as a base for your future applications.
 
@@ -23,7 +23,7 @@ Choose one of the following:
 
 Open main.py, modify this line: 
 
-`Tradenity.API_KEY = 'sk_xxxxxxxxxxxxxxxxx'` 
+`Configuration.API_KEY = 'sk_xxxxxxxxxxxxxxxxx'` 
 
 to reflect your store's API key
 
